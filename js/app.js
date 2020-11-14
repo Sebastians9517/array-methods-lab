@@ -124,8 +124,9 @@ const inventors = [
 
   // Array.prototype.some()
   // 8. Check if at least one person is 19 or older?
-      
-
+      let  older = 0;
+       older = devs.map(age => 2020 - age.year)
+       console.log(older.some(age => (19 <= age)))
 
   // Array.prototype.every()
   // 9. Check if everyone is 19 or older?
