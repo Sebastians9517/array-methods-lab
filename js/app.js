@@ -1,4 +1,6 @@
 // Some data we can work with
+
+
 const inventors = [
     { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
     { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
@@ -14,6 +16,7 @@ const inventors = [
     { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
   ];
 
+
   // Array.prototype.filter()
   // 1. Filter the array of inventors into a new array containing only the inventors born in the 1500's
 
@@ -22,8 +25,16 @@ const inventors = [
         console.log(bornInMD);
 
 
+
   // Array.prototype.map()
   // 2. Map the array of the inventors into a new array containing objects with just the first and last names as properties
+      let mappedNames = inventors.map(names => {
+        let namesObj = {}
+        namesObj[names.first] = names.first
+        namesObj.first = names.last
+        return namesObj;
+      })
+      console.log(mappedNames)
 
 
 
