@@ -102,8 +102,17 @@ const inventors = [
 
   // Array.prototype.reduce()
   // 7. Count the number of instances for each of the data items.
-  // Hint:  Return an object where the keys are 'car', 'truck', etc. and the values are the count.
-
+  // Hint:  Return an object where the keys are 'car', 'truck', etc. and the values are the count. //car: 5   truck: 3   bike: 2   walk: 2   van: 2
+      let repeated = data.reduce((counter, repeats) => {
+        //counter[repeats] = counter[repeats] ? counter[repeats] + 1 : 1;
+        if (counter[repeats]) {
+          counter[repeats] = counter[repeats] + 1
+        } else {
+          counter[repeats] = 1
+        }
+        return counter
+      }, {});
+      console.log(repeated)
 
 
   const devs = [
@@ -115,7 +124,7 @@ const inventors = [
 
   // Array.prototype.some()
   // 8. Check if at least one person is 19 or older?
-
+      
 
 
   // Array.prototype.every()
