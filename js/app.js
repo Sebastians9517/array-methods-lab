@@ -29,17 +29,20 @@ const inventors = [
   // Array.prototype.map()
   // 2. Map the array of the inventors into a new array containing objects with just the first and last names as properties
       let mappedNames = inventors.map(names => {
-        let namesObj = {}
-        namesObj[names.first] = names.first
-        namesObj.first = names.last
+        let namesObj = {};
+        namesObj[names.first] = names.first;
+        namesObj.first = names.last;
         return namesObj;
-      })
-      console.log(mappedNames)
+      });
+      console.log(mappedNames);
 
 
 
   // Array.prototype.sort()
   // 3. Sort the inventors by birthdate, oldest to youngest
+       let birthyear = inventors.map(year => year.year);
+       console.log(birthyear.sort());
+
 
 
 
