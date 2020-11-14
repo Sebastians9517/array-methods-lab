@@ -91,7 +91,7 @@ const inventors = [
         .reverse()
         .join()
       )
-      console.log(orderedNames)
+      console.log(orderedNames);
 
 
 
@@ -112,7 +112,7 @@ const inventors = [
         }
         return counter
       }, {});
-      console.log(repeated)
+      console.log(repeated);
 
 
   const devs = [
@@ -125,8 +125,8 @@ const inventors = [
   // Array.prototype.some()
   // 8. Check if at least one person is 19 or older?
       let  older = 0;
-       older = devs.map(age => 2020 - age.year)
-       console.log(older.some(age => (19 <= age)))
+       older = devs.map(age => 2020 - age.year);
+       console.log(older.some(age => (19 <= age)));
 
 
 
@@ -136,7 +136,7 @@ const inventors = [
       console.log(devs.every(allOverNineteen));
 
 
-      
+
   const comments = [
     { text: 'Love this!', id: 523423 },
     { text: 'Super good', id: 823423 },
@@ -147,8 +147,12 @@ const inventors = [
 
   // Array.prototype.find()
   // 10. Find the comment with the id of 823423
+      let found = comments.find(comment => comment.id === 823423);
+      console.log(found)
 
 
 
   // Array.prototype.findIndex()
   // 11. Find the index of the comment with an id of 123523
+      let indexID = (comment) => comment.id === 123523;
+      console.log(comments.findIndex(indexID));
