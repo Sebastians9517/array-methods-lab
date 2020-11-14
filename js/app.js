@@ -19,39 +19,54 @@ const inventors = [
 
   // Array.prototype.filter()
   // 1. Filter the array of inventors into a new array containing only the inventors born in the 1500's
-
       let bornAfterMD = inventors.filter(afterMD => afterMD.year > 1500);
       let bornInMD = bornAfterMD.filter(beforeMD => beforeMD.year < 1600);
         console.log(bornInMD);
 
 
-
   // Array.prototype.map()
   // 2. Map the array of the inventors into a new array containing objects with just the first and last names as properties
       let mappedNames = inventors.map(names => {
-        let namesObj = {};
-        namesObj[names.first] = names.first;
-        namesObj.first = names.last;
+          let namesObj = {first: names.first, last: names.last};
         return namesObj;
       });
       console.log(mappedNames);
 
 
-
   // Array.prototype.sort()
   // 3. Sort the inventors by birthdate, oldest to youngest
-       let birthyear = inventors.map(year => year.year);
-       console.log(birthyear.sort());
-
-
+      function birthyear(a, b) {
+        if (a.year < b.year) {
+            return -1;
+        } if (a.year > b.year){
+            return 1;
+        } else
+            return 0;
+      };
+      console.log(inventors.sort(birthyear));
 
 
   // 4. Sort the inventors by years lived from shortest to longest-lived
-
+        function lifespan(a, b) {
+          if ((a.passed - a.year) < (b.passed - b.year)) {
+             return -1;
+          } if ((a.passed - a.year) > (b.passed - b.year)) {
+             return 1;
+          } else
+             return 0;
+        };
+        console.log(inventors.sort(lifespan));
 
 
   // Array.prototype.reduce()
   // 5. How many years did all the inventors live?
+        let lifetime, sum = 0;
+        lifetime = inventors.map(age => age.passed - age.year);
+        sum = lifetime.reduce((sum, currentValue) => {
+          return sum + currentValue;
+        });
+        console.log(sum)
+
 
 
 
@@ -71,6 +86,12 @@ const inventors = [
 
   // Array.prototype.map()
   // 6. Map the people array such that the new array consists of strings with the names formatted as "First Last", e.g., "Becker, Carl" should be mapped to "Carl Becker".
+      let orderedNames = people.map((p) =>
+        p.split(',')
+        .reverse()
+        .join()
+      )
+      console.log(orderedNames)
 
 
 
