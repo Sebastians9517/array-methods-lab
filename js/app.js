@@ -128,11 +128,15 @@ const inventors = [
        older = devs.map(age => 2020 - age.year)
        console.log(older.some(age => (19 <= age)))
 
+
+
   // Array.prototype.every()
   // 9. Check if everyone is 19 or older?
+      let allOverNineteen = (currentValue) => currentValue >= 19;
+      console.log(devs.every(allOverNineteen));
 
 
-
+      
   const comments = [
     { text: 'Love this!', id: 523423 },
     { text: 'Super good', id: 823423 },
